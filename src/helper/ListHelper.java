@@ -21,7 +21,7 @@ public class ListHelper {
      * @return lista de números inteiros
      */
     public static List<Integer> elementsList() {
-        int quantityOfElements = THOUSAND_ELEMENTS.getValue();
+        int quantityOfElements = ONE_MILLION_THOUSAND_ELEMENTS.getValue();
         List<Integer> list = new ArrayList<>(quantityOfElements);
 
         for (int index = 1; index <= quantityOfElements; index++) {

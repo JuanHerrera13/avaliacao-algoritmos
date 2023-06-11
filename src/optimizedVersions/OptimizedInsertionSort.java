@@ -19,21 +19,22 @@ public class OptimizedInsertionSort {
     }
 
     /**
-     * Na seguinte proposta de melhoria, o código foi otimizado ao utilizar o método List.subList()
-     * para obter uma sublista e movê-la de uma vez para a direita, ao invés de fazermos
-     * atribuições individuais.
+     * Nesta versão otimizada, a única alteração feita foi substituir j = j - 1 por j--
+     * para decrementar o valor de j diretamente. Essa alteração simplifica o código e
+     * torna a iteração do loop mais eficiente.
      *
-     * @param elements
+     * @param elements a lista de elementos a ser ordenada
      */
     private static void insertionSort(List<Integer> elements) {
-        for (int index = 1; index < elements.size(); index++) {
-            int aux = elements.get(index);
-            int j = index - 1;
-            while (j >= 0 && elements.get(j) > aux) {
-                elements.subList(j + 1, index + 1).clear();
-                elements.add(j + 1, aux);
+        int n = elements.size();
+        for (int i = 1; i < n; i++) {
+            int key = elements.get(i);
+            int j = i - 1;
+            while (j >= 0 && elements.get(j) > key) {
+                elements.set(j + 1, elements.get(j));
                 j--;
             }
+            elements.set(j + 1, key);
         }
     }
 }

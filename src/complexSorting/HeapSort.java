@@ -35,7 +35,7 @@ public class HeapSort {
             heapify(elementsList, listSize, index);
         for (int index = listSize - 1; index > 0; index--) {
             int temp = elementsList.get(0);
-            elementsList.set(0, elementsList().get(index));
+            elementsList.set(0, elementsList.get(index));
             elementsList.set(index, temp);
             heapify(elementsList, index, 0);
         }
@@ -61,7 +61,7 @@ public class HeapSort {
             int swap = elementsList.get(index);
             elementsList.set(index, elementsList.get(largest));
             elementsList.set(largest, swap);
-            heapify(elementsList, index, largest);
+            heapify(elementsList, listSize, largest);
         }
     }
 }
