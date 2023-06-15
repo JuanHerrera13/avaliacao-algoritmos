@@ -2,13 +2,22 @@ package optimizedVersions;
 
 import java.util.List;
 
-import static helper.ListHelper.elementsList;
+import static helper.ListHelper.randomElementsList;
 
 public class OptimizedQuickSort {
 
+    /**
+     * Método que apresenta a lista antes e após o algoritmo Quick Sort otimizado e
+     * o seu tempo de execução.
+     *
+     * Para configurar o padrão de geração de dados, altere a chamada do método da classe helper para:
+     * randomElementsList(), orderedElementsList(), reverseOrderedElementsList() ou nearlyOrderedElementsList()
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println("-----Algoritmo Quick Sort-----");
-        List<Integer> elementsList = elementsList();
+        List<Integer> elementsList = randomElementsList();
         System.out.println("\nLista de elementos antes do Quick Sort: " + elementsList);
         double timeBeginning = System.currentTimeMillis();
         quickSort(elementsList, 0, elementsList.size() - 1);

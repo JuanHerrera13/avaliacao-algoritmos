@@ -2,7 +2,7 @@ package simpleSorting;
 
 import java.util.List;
 
-import static helper.ListHelper.elementsList;
+import static helper.ListHelper.randomElementsList;
 
 public class SelectionSort {
 
@@ -10,11 +10,14 @@ public class SelectionSort {
      * Método que apresenta a lista antes e após o algoritmo Selection Sort e
      * o seu tempo de execução.
      *
+     * Para configurar o padrão de geração de dados, altere a chamada do método da classe helper para:
+     * randomElementsList(), orderedElementsList(), reverseOrderedElementsList() ou nearlyOrderedElementsList()
+     *
      * @param args
      */
     public static void main(String[] args) {
         System.out.println("-----Algoritmo Selection Sort-----");
-        List<Integer> elementsList = elementsList();
+        List<Integer> elementsList = randomElementsList();
         System.out.println("\nLista de elementos antes do Selection Sort: " + elementsList);
         double timeBeginning = System.currentTimeMillis();
         selectionSort(elementsList);
